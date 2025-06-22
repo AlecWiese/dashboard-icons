@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  dashboard-icons:
+    build: .
+    container_name: dashboard-icons-web
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    restart: unless-stopped
+    networks:
+      - dashboard-icons-network
+
+networks:
+  dashboard-icons-network:
+    driver: bridge
