@@ -10,9 +10,3 @@ services:
       - NODE_ENV=production
       - GITHUB_TOKEN=${GITHUB_TOKEN}
     restart: unless-stopped
-    networks:
-      - dashboard-icons-network
-
-networks:
-  dashboard-icons-network:
-    driver: bridge
